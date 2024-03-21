@@ -1,5 +1,5 @@
 import Panel from "./components/Panel";
-// import Cart from "./components/Cart";
+import Cart from "./components/Cart";
 
 import "./App.css";
 
@@ -43,10 +43,14 @@ function App() {
       price: 22.23,
     },
   ];
+  
   console.log(cartState);
+  
   return (
     <div>
-      // here is where your Cart component should go
+      {/* pass # of items in the cart to the Cart component */}
+      <Cart numberOfItems={cartState.number} />
+      
       <div className="main">
         {data.map((d) => (
           <Panel data={d} key={d.id} propCart={{ cartState, setCartState }} />
